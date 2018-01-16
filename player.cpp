@@ -1,128 +1,45 @@
-#include <iostream>
-#include <vector>
-#include "player.h"
-#include "ships.h"
-using namespace std;
+#include "stdafx.h"
+#include "Player.h"
 
-void Player::changeCurrency(int c)
+Player::Player()
 {
-	currency += c;
-	if (currency < 0)
-		cout << "\nError: Setting player currency to value lower than zero\n";
+	id = "dude";
+	shipsTotal = 0;
 }
 
-int Player::getCurrency()
+Player::Player(std::string name)
 {
-	return currency;
+	id = "name";
+	shipsTotal = 0;
 }
 
-void Player::buyFighter(int n)
+Player& Player::operator=(const Player &player)
 {
-	int cost = (n * 50);
-	if (cost > currency) {
-		cout << "\nError: Cost of ship(s) higher than player currency\n";
-	}
-	else {
-		cost = 0;
-		for (int i = 0; i < n; i++) {
-			Fighters.push_back(Ship("Fighter"));
-			cost -= 50;
-		}
-		changeCurrency(cost);
-	}
+	if (this == &player)
+		return *this;
+
+	this->id = player.id;
+	return *this;
 }
 
-void Player::buyBomber(int n)
+void Player::changeID(std::string newID)
 {
-	int cost = (n * 300);
-	if (cost > currency) {
-		cout << "\nError: Cost of ship(s) higher than player currency\n";
-	}
-	else {
-		cost = 0;
-		for (int i = 0; i < n; i++) {
-			Bombers.push_back(Ship("Bomber"));
-			cost -= 300;
-		}
-		changeCurrency(cost);
-	}
+	this->id = newID;
 }
 
-void Player::buyCruiser(int n)
+std::string Player::returnID()
 {
-	int cost = (n * 2200);
-	if (cost > currency) {
-		cout << "\nError: Cost of ship(s) higher than player currency\n";
-	}
-	else {
-		cost = 0;
-		for (int i = 0; i < n; i++) {
-			Cruisers.push_back(Ship("Cruiser"));
-			cost -= 2200;
-		}
-		changeCurrency(cost);
-	}
+	return id;
 }
 
-void Player::buyDestoyer(int n)
+void Player::modShips(int number)
 {
-	int cost = (n * 8000);
-	if (cost > currency) {
-		cout << "\nError: Cost of ship(s) higher than player currency\n";
-	}
-	else {
-		cost = 0;
-		for (int i = 0; i < n; i++) {
-			Destroyers.push_back(Ship("Destroyer"));
-			cost -= 8000;
-		}
-		changeCurrency(cost);
-	}
+	shipsTotal += number;
+	if (shipsTotal < 0)
+		shipsTotal = 0;
 }
 
-void Player::killFighter(int index)
+int Player::returnShips()
 {
-	if (Fighters.size() <= 0) {
-		return;
-	} else if (Fighters.size() == 1) {
-		Fighters.clear();
-		return;
-	}
-	Fighters.erase(Fighters.begin() + index);
-}
-
-void Player::killBomber(int index)
-{
-	if (Bombers.size() <= 0) {
-		return;
-	}
-	else if (Bombers.size() == 1) {
-		Bombers.clear();
-		return;
-	}
-	Bombers.erase(Bombers.begin() + index);
-}
-
-void Player::killCruiser(int index)
-{
-	if (Cruisers.size() <= 0) {
-		return;
-	}
-	else if (Cruisers.size() == 1) {
-		Cruisers.clear();
-		return;
-	}
-	Cruisers.erase(Cruisers.begin() + index);
-}
-
-void Player::killDestroyer(int index)
-{
-	if (Destroyers.size() <= 0) {
-		return;
-	}
-	else if (Destroyers.size() == 1) {
-		Destroyers.clear();
-		return;
-	}
-	Destroyers.erase(Destroyers.begin() + index);
+	return shipsTotal;
 }

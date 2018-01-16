@@ -1,27 +1,19 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include "ships.h"
+#include <string>
 
 class Player {
-public:
-	vector <Ship> Fighters;
-	vector <Ship> Bombers;
-	vector <Ship> Cruisers;
-	vector <Ship> Destroyers;
-	int currency;
+protected:
+	std::string id; //must be unique
+	int shipsTotal;
 
 public:
-	void changeCurrency(int c);
-	int getCurrency();
+	Player();
+	Player(std::string name);
+	Player& operator=(const Player &player);
+	
+	void changeID(std::string newID);
+	std::string returnID();
 
-	void buyFighter(int n);
-	void buyBomber(int n);
-	void buyCruiser(int n);
-	void buyDestoyer(int n);
-
-	void killFighter(int index);
-	void killBomber(int index);
-	void killCruiser(int index);
-	void killDestroyer(int index);
+	void modShips(int number);
+	int returnShips();
 };
