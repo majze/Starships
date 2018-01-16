@@ -1,26 +1,26 @@
 Starships
 ====================================
 
-### What is it?
+## What is it?
 
 A simple game using C++ based off polymorphic and random code. 
 
-### Classes
+## Classes
 
-##[Galaxy]
+### Galaxy
 
-##[Player]
+### Player
 
-##[System]
+### System
 
-##[Planet]
+### Planet
 
-##[additionaltools]
+### additionaltools
 
 
-### Notes
+## Notes
 
-### Version History
+## Version History
 
-## 0.0.2 Jan 15 2018
+### 0.0.2 Jan 15 2018
 Modeling of basic classes and their interactions
