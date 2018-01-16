@@ -7,8 +7,8 @@ Planet::Planet()
 	int type = rollDie();
 
 	setType(type);
-	setSize(type);
-	setResources(type);
+	setSize(planetType);
+	setResources(planetType);
 	setOwner(Player("n/a"));
 }
 
