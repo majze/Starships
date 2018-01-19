@@ -25,7 +25,7 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
 
 <table>
   <tr>
-    <td>Type #</td>
+    <td>#</td>
     <td>Name</td>
     <td>Ore(base)</td>
     <td>Gas(base)</td>
@@ -40,7 +40,7 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
     <td>0</td>
     <td>0</td>
     <td>N</td>
-    <td>*Fleet launch -75% fuel use*</td>
+    <td><i>Fleet launch -75% fuel use</i></td>
   </tr>
    <tr>
     <td>2</td>
@@ -49,7 +49,7 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
     <td>100k</td>
     <td>25k</td>
     <td>Y</td>
-    <td>*Resource rich*</td>
+     <td><i>Resource rich</i></td>
   </tr>
    <tr>
     <td>3</td>
@@ -58,7 +58,7 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
     <td>10k</td>
     <td>10k</td>
     <td>N</td>
-    <td>*Fleet launch -50% fuel use*</td>
+     <td><i>Fleet launch -50% fuel use</i></td>
   </tr>
    <tr>
     <td>4</td>
@@ -67,7 +67,7 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
     <td>200k</td>
     <td>100k</td>
     <td>Y</td>
-    <td>*Very resource rich*</td>
+     <td><i>Very resource rich</i></td>
   </tr>
    <tr>
     <td>5</td>
@@ -76,7 +76,7 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
     <td>25k</td>
     <td>0</td>
     <td>Y</td>
-    <td>*Research efficiency bonus for laboratory*</td>
+     <td><i>Research efficiency bonus for laboratory</i></td>
   </tr>
    <tr>
     <td>6</td>
@@ -85,7 +85,7 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
     <td>500k</td>
     <td>0</td>
     <td>N</td>
-    <td>*Very rich in Gas*</td>
+     <td><i>Very rich in Gas</i></td>
   </tr>
 </table>
 
@@ -93,9 +93,11 @@ Each star [System] consists of a predetermined amount of [Planet] slots (ex: 10)
 
 Contains miscellaneous functions to assist the program.
 
-**map<int, std::string> planetTypes** is where the [Planet] names are stored
-**rollDie()** Helps randomly generate [Planets] - must be modified when adding or removing more planets types
-**Variation(double baseAmount, double modifer)** takes the base values for a given [Planet] type and increases the amount of resources the [Planet] contains upon [Planet] creation
+**map<int, std::string> planetTypes** is where the [Planet] names are stored.
+
+**rollDie()** Helps randomly generate [Planets] - must be modified when adding or removing more planets types.
+
+**Variation(double baseAmount, double modifer)** takes the base values for a given [Planet] type and increases the amount of resources the [Planet] contains upon [Planet] creation.
 
 ## Notes
 
