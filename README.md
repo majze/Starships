@@ -3,7 +3,7 @@ Starships
 
 ## What is it?
 
-A simple game using C++ based off polymorphic and random code. I may port this to Java soon if I get serious about it.
+A simple game using C++ based off polymorphic and random code. I may port this to Java or C# soon if I get serious about it. Further plans include programming a local database to hold game elements.
 
 ## Classes
 
